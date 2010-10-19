@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="TicketBooking_1 Tests" verbose="2" parallel="false">
+   <test name="TicketBooking_1 Test">
+     <classes>
+       <class name="org.domain.cincin.test.TicketBooking_1Test"/>       
+     </classes>
+   </test>	
+</suite>

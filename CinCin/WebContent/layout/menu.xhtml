@@ -1,0 +1,19 @@
+<rich:toolBar
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:rich="http://richfaces.org/rich" style=" height : 102px;">
+    <rich:toolBarGroup>
+        <h:outputText value="CIN CIN"/>
+        <s:link id="menuHomeId_1" view="/home.xhtml" value="Home Page" propagation="none"/>
+        <s:link id="menuHomeId_2" view="/choosingCinema.xhtml" value="Book a ticket" propagation="none"/>
+    </rich:toolBarGroup>
+    <!-- @newMenuItem@ -->
+    <rich:toolBarGroup location="right">
+        <h:outputText id="menuWelcomeId" value="signed in as: #{credentials.username}" rendered="#{identity.loggedIn}"/>
+        <s:link id="menuLoginId" view="/login.xhtml" value="Login" rendered="#{not identity.loggedIn}" propagation="none"/>
+        <s:link id="menuLogoutId" view="/home.xhtml" action="#{identity.logout}" value="Logout" rendered="#{identity.loggedIn}" propagation="none"/>
+    </rich:toolBarGroup>
+</rich:toolBar>

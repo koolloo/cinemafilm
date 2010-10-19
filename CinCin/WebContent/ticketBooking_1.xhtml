@@ -1,0 +1,56 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" template="layout/template.xhtml">
+
+	<ui:define name="body">
+
+		<h:form id="ticketBooking_1Form">
+
+			<rich:panel>
+				<f:facet name="header">Proces rezerwacji biletow 1:</f:facet>
+
+				<s:decorate id="valueField1" template="layout/edit.xhtml">
+					<ui:define name="label">Tytul filmu:</ui:define>
+					<h:inputText id="value1" required="true"
+						value="#{movieDetails.title}" />
+				</s:decorate>
+				<s:decorate id="valueField2" template="layout/edit.xhtml">
+					<ui:define name="label">Rezyser filmu:</ui:define>
+					<h:inputText id="value2" required="true"
+						value="#{movieDetails.director}" />
+				</s:decorate>
+				<s:decorate id="valueField3" template="layout/edit.xhtml">
+					<ui:define name="label">Czas trwania filmu:</ui:define>
+					<h:inputText id="value3" required="true"
+						value="#{movieDetails.length}" />
+				</s:decorate>
+
+				<div style="clear: both" />
+
+			</rich:panel>
+
+			<div class="actionButtons"><h:commandButton
+				id="ticketBooking_1" value="ticketBooking_1"
+				action="#{ticketBooking.moveToStep2}" /></div>
+
+			<br />
+			<h:outputText value="Szczegoly filmu :" />
+			<br />
+			<h:outputText value="#{ticketBooking.movieTitle}" />
+			<br />
+			<h:outputText value="#{ticketBooking.movieDirector}" />
+			<br />
+			<h:outputText value="#{ticketBooking.length}" />
+			<br />
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
